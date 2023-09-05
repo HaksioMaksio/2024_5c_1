@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int number = 645654;
+
+  void incrementNumber() {
+    setState(() {
+      number++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Number Increment App'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('Twój wynik: $number'),
+              ElevatedButton(
+                onPressed: incrementNumber,
+                child: const Text('Dodaj 1'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
